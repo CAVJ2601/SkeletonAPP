@@ -21,6 +21,18 @@ export class RegistroPage implements OnInit {
     })
    } 
 
+  nombreUsuario: string = "";
+  apellidoUsuario: string = "";
+  nivelEducacion: string = "";  
+   
+  limpiarCeldas(){
+    this.nombreUsuario='';
+    this.apellidoUsuario='';
+    this.nivelEducacion='';
+    
+  }
+
+
   ngOnInit() {
   }
 
