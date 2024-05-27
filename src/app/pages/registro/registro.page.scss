@@ -1,0 +1,32 @@
+ion-toolbar{
+    --background: #851e25;
+    color: antiquewhite;
+  }
+
+ion-header{
+    text-align: center;
+}
+
+ion-header ion-title{
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+.titulo-registro{
+    text-align: center;
+      
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+}
+
+.datos-registro{
+    text-align: center;
+      
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+}
