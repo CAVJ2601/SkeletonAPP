@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
     <ion-title>SkeletonAPP</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -33,6 +36,7 @@
         <ion-select-option value="es-completa">Enseñanza superior completa</ion-select-option>
       </ion-select>
     </ion-item>
+
     <ion-button (click)="limpiarCeldas()">Limpiar</ion-button> <ion-button>Mostrar</ion-button> 
   </ion-list>
   </div>
