@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Planificador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Planificador</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<div id="container">
+  <strong>¡Bienvenido!</strong>
+  <ion-list>
+    <ion-item>
+      <ion-input label="Usuario" placeholder="Registre nombre" [(ngModel)]="Usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" label="Password" value="Registre-clave" [(ngModel)]="Password">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+      <ion-button (click)="enviarDatos()">Ingresar</ion-button>
+      <ion-text>Crea tu cuenta gratis</ion-text>
+  </ion-list>
+</div>
+</ion-content>

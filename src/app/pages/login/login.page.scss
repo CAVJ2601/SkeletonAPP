@@ -2,29 +2,39 @@ ion-toolbar{
     --background: #851e25;
     color: antiquewhite;
   }
-
-ion-header{
+  
+  ion-header {
     text-align: center;
-}
-
-ion-header ion-title{
+  }
+  
+  ion-header ion-title{
     font-size: 28px;
     margin-bottom: 5px;
     margin-top: 5px;
   }
 
-
-
-.datos-registro{
+  
+  #container {
     text-align: center;
-      
+  
     position: absolute;
     left: 0;
     right: 0;
-    top: 40%;
-}
+    top: 35%;
 
-ion-button {
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  ion-list{
+    width: 90%;
+    --background: #1c997f;
+  }
+  
+  ion-button {
     --background: #FAFAFA;
     --background-hover: #E8E1DF;
   
@@ -41,4 +51,13 @@ ion-button {
   
     --padding-top: 10px;
     --padding-bottom: 10px;
+  }
+  
+  ion-list ion-button{
+    display:block;
+    padding: 5%;
+  }
+  
+  ion-list ion-text{
+    padding: 5%;
   }

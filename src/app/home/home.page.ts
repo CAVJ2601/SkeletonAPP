@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,24 +8,20 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  Usuario:string = "";
-  Password:string = "";
+  usuarioRecibido: string ="";
+  passwordRecibido: string ="";
 
-  constructor(private router: Router) {
+  constructor(private activerouter: ActivatedRoute, private router: Router) {
+    this.activerouter.queryParams.subscribe(params =>{
+      if(this.router.getCurrentNavigation()?.extras?.state){
+        this.usuarioRecibido = this.router.getCurrentNavigation()?.extras?.state?.['usuarioEnviado'];
+        this.passwordRecibido = this.router.getCurrentNavigation()?.extras?.state?.['passwordEnviada'];
 
-  }
-
-  enviarDatos(){
-
-    let navigationExtras: NavigationExtras = {
-      state: {
-        usuarioEnviado: this.Usuario,
-        passwordEnviada: this.Password
       }
-    }
-    this.router.navigate(['/registro'], navigationExtras)
-  }
+    })
+   } 
 
+ 
   ngOnInit(){
 
   }

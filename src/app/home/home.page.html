@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      SkeletonAPP
+      Planificador
     </ion-title>
     <ion-text>Aquí comienza todo</ion-text>
   </ion-toolbar>
@@ -10,23 +10,16 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">SkeletonAPP</ion-title>
+      <ion-title size="large">Planificador</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>¡Bienvenido!</strong>
-    <ion-list>
-      <ion-item>
-        <ion-input label="Usuario" placeholder="Registre nombre" [(ngModel)]="Usuario"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" label="Password" value="Registre-clave" [(ngModel)]="Password">
-          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
-        </ion-input>
-      </ion-item>
-        <ion-button (click)="enviarDatos()">Ingresar</ion-button>
-        <ion-text>Crea tu cuenta gratis</ion-text>
-    </ion-list>
+  <div class="titulo-registro">
+    <h1>¡Bienvenido/a!</h1>
+    <p>Usuario: {{ usuarioRecibido }}</p>
+    <h2>¿Con qué deseas trabajar hoy?</h2>
   </div>
+
+  
+
 </ion-content>
