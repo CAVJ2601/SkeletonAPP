@@ -1,6 +1,9 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>rev-calen</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Revisión de Calendario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +13,9 @@
       <ion-title size="large">rev-calen</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="calendario">
+    <ion-datetime [firstDayOfWeek]="1"></ion-datetime>
+  </div>  
+
 </ion-content>

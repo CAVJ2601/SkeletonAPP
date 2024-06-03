@@ -1,6 +1,6 @@
 ion-toolbar{
-    --background: #851e25;
-    color: antiquewhite;
+    --background: #C71755;
+    color: #f0ddbd;
   }
 
 ion-header{
@@ -19,5 +19,17 @@ ion-header ion-title{
     position: absolute;
     left: 0;
     right: 0;
-    top: 10%;
+    top: 15%;
 }
+
+mat-grid-list{
+    display: grid;
+    top: 40%;
+    margin: 5px;
+}
+
+mat-grid-tile{
+    background: #5B9B9A;
+    color: antiquewhite;
+    border-radius: 15%;
+    }

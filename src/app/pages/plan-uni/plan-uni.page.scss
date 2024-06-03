@@ -1,0 +1,53 @@
+ion-toolbar{
+    --background: #C71755;
+    color: #f0ddbd;
+  }
+
+  .example-chip-list {
+    width: 100%;
+  }
+
+ion-content .titulo-uni{
+  text-align: center;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 15%;
+  padding: 6px;
+
+}
+
+  .titulo-uni strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+.plani-unidad{
+  text-align: center;
+      
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+}
+
+ion-button {
+  --background: #FAFAFA;
+  --background-hover: #E8E1DF;
+
+  color: black;
+
+  --border-radius: 0;
+  --border-color: #000;
+  --border-style: solid;
+  --border-width: 1px;
+
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+
+  --ripple-color: #520c30;
+
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+
+}

@@ -20,6 +20,17 @@
     <h2>¿Con qué deseas trabajar hoy?</h2>
   </div>
 
-  
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile [routerLink]="'/rev-calen'">Calendario</mat-grid-tile>
+    <mat-grid-tile [routerLink]="'/plan-uni'">Planificación de Unidad</mat-grid-tile>
+    <mat-grid-tile [routerLink]="'/plan-clase'">Planificación de Clase</mat-grid-tile>
+    <mat-grid-tile [routerLink]="'/listado-plan'">Listado Planificaciones</mat-grid-tile>
+  </mat-grid-list>
 
 </ion-content>
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <ion-title>App desarrollada por Claudia Vidal</ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -8,12 +8,20 @@ import { PlanUniPageRoutingModule } from './plan-uni-routing.module';
 
 import { PlanUniPage } from './plan-uni.page';
 
+import {MatChipEditedEvent, MatChipInputEvent, MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PlanUniPageRoutingModule
+    PlanUniPageRoutingModule,
+    MatChipsModule,
+    MatIconModule,
+    MatFormFieldModule,
   ],
   declarations: [PlanUniPage]
 })

@@ -12,10 +12,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatChipEditedEvent, MatChipInputEvent, MatChipsModule} from '@angular/material/chips';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule,],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatGridListModule, ReactiveFormsModule, MatChipsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

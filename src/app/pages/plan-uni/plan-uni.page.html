@@ -1,15 +1,61 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>plan-uni</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Planificación de Unidad</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">plan-uni</ion-title>
+      <ion-title size="large">Planificación de Unidad</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="titulo-uni">
+    <strong>Completa los siguentes espacios para planificar tu Unidad</strong>
+  </div>
+  
+
+  <div class="plani-unidad">  
+  <ion-list>
+    <ion-item>
+      <ion-input label="Unidad" placeholder="Ingrese nombre de la Unidad" [(ngModel)]="nombreUnidad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Objetivo Transversal" placeholder="Ingrese el OFT" [(ngModel)]="OFT"></ion-input>
+    </ion-item>
+    <mat-form-field class="example-chip-list">
+      <mat-label>Objetivos de Aprendizaje</mat-label>
+      <mat-chip-grid #chipGrid aria-label="Enter fruits">
+        @for (oA of objAp; track oA) {
+          <mat-chip-row
+            (removed)="remove(oA)"
+            [editable]="true"
+            (edited)="edit(oA, $event)"
+            [aria-description]="'press enter to edit ' + oA.name">
+            {{oA.name}}
+            <button matChipRemove [attr.aria-label]="'remove ' + oA.name">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+        }
+        <input placeholder="Agrege el OA..."
+               [matChipInputFor]="chipGrid"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"/>
+      </mat-chip-grid>
+    </mat-form-field>
+    <ion-item>
+      <ion-input label="Contenidos" labelPlacement="floating" placeholder="Escriba los contenidos generales a revisar" [(ngModel)]="Contenido"></ion-input>
+    </ion-item>
+    <ion-button (click)="limpiarCeldas()">Limpiar</ion-button>
+  </ion-list>
+  </div>
+  
 </ion-content>
 
 <ion-footer [translucent]="true">
