@@ -8,12 +8,15 @@ import { ListadoPlanPageRoutingModule } from './listado-plan-routing.module';
 
 import { ListadoPlanPage } from './listado-plan.page';
 
+import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListadoPlanPageRoutingModule
+    ListadoPlanPageRoutingModule,
+    MatTableModule,
   ],
   declarations: [ListadoPlanPage]
 })
