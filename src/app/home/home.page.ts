@@ -9,18 +9,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 })
 export class HomePage implements OnInit {
 
-  usuarioRecibido: string ="";
-  passwordRecibido: string ="";
-
-  constructor(private activerouter: ActivatedRoute, private router: Router) {
-    this.activerouter.queryParams.subscribe(params =>{
-      if(this.router.getCurrentNavigation()?.extras?.state){
-        this.usuarioRecibido = this.router.getCurrentNavigation()?.extras?.state?.['usuarioEnviado'];
-        this.passwordRecibido = this.router.getCurrentNavigation()?.extras?.state?.['passwordEnviada'];
-
-      }
-    })
-   } 
+  constructor(){
+    
+  }
 
  
   ngOnInit(){

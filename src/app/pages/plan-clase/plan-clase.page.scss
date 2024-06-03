@@ -1,4 +1,19 @@
 ion-toolbar{
-    --background: #851e25;
+    --background: #C71755;
     color: #f0ddbd;
   }
+
+
+mat-spinner{
+  margin-top: 60%;
+  margin-left: 35%;
+}
+
+.texto{
+  text-align: center;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+}

@@ -4,6 +4,7 @@ import {MatChipEditedEvent, MatChipInputEvent, MatChipsModule} from '@angular/ma
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {LiveAnnouncer} from '@angular/cdk/a11y';
+import { NavigationExtras, Router } from '@angular/router';
 
 
 @Component({
@@ -65,10 +66,25 @@ export class PlanUniPage implements OnInit {
     this.Contenido='';
     
   }
-  
-  constructor() { }
 
+  constructor(private router: Router) { }
   ngOnInit() {
   }
+
+  enviarDatos(){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        nomUniEnviado: this.nombreUnidad,
+        oftEnviado: this.OFT,
+        contEnviado: this.Contenido,
+        objApEnviado: JSON.stringify(this.objAp),
+
+      }
+    }
+  
+    this.router.navigate(['/listado-plan'], navigationExtras);
+  }
+
+
 
 }
