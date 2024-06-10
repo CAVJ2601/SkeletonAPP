@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ComponentsModule } from '../components/components.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     IonicModule,
     HomePageRoutingModule,
     MatGridListModule,
+    ComponentsModule,
   ],
   declarations: [HomePage]
 })

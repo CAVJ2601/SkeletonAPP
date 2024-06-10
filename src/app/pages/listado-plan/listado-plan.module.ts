@@ -10,6 +10,8 @@ import { ListadoPlanPage } from './listado-plan.page';
 
 import {MatTableModule} from '@angular/material/table';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
     IonicModule,
     ListadoPlanPageRoutingModule,
     MatTableModule,
+    ComponentsModule
   ],
   declarations: [ListadoPlanPage]
 })

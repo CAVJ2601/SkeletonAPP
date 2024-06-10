@@ -18,11 +18,13 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SQLite } from '@awesome-cordova-plugins/sqlite/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatGridListModule, ReactiveFormsModule, MatChipsModule, MatTableModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync()],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, provideAnimationsAsync(), SQLite],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
