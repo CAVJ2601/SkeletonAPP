@@ -9,6 +9,7 @@ import { PlanClasePageRoutingModule } from './plan-clase-routing.module';
 import { PlanClasePage } from './plan-clase.page';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     IonicModule,
     PlanClasePageRoutingModule,
     MatProgressSpinnerModule,
+    ComponentsModule,
   ],
   declarations: [PlanClasePage]
 })

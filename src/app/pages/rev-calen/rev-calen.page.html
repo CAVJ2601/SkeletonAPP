@@ -15,7 +15,11 @@
   </ion-header>
 
   <div class="calendario">
-    <ion-datetime [firstDayOfWeek]="1"></ion-datetime>
+    <ion-datetime [firstDayOfWeek]="1" presentation="date"></ion-datetime>
   </div>  
 
+  <button mat-raised-button (click)="openBottomSheet()">Open Bottom Sheet</button>
+
 </ion-content>
+
+<app-footer></app-footer>

@@ -12,6 +12,7 @@ import {MatChipEditedEvent, MatChipInputEvent, MatChipsModule} from '@angular/ma
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatChipsModule,
     MatIconModule,
     MatFormFieldModule,
+    ComponentsModule,
   ],
   declarations: [PlanUniPage]
 })
