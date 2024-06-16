@@ -18,5 +18,8 @@ export class ApiclientService {
   apiURL = 'https://api.boostr.cl/feriados/en.json';
 
   constructor(private http:HttpClient) { }
-  
+
+  getFestivos(): Observable<any>{
+    return this.http.get<any>(this.apiURL);
+  }
 }
