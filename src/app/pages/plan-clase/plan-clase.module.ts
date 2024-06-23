@@ -11,6 +11,10 @@ import { PlanClasePage } from './plan-clase.page';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ComponentsModule } from 'src/app/components/components.module';
 
+import { MatChipsModule } from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +22,9 @@ import { ComponentsModule } from 'src/app/components/components.module';
     IonicModule,
     PlanClasePageRoutingModule,
     MatProgressSpinnerModule,
+    MatChipsModule,
+    MatIconModule,
+    MatFormFieldModule,
     ComponentsModule,
   ],
   declarations: [PlanClasePage]

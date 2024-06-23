@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ServicioDBService } from 'src/app/services/servicio-db.service';
 
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -16,37 +19,75 @@ export class RegistroPage implements OnInit {
   nombreUsuario: string = "";
   apellidoUsuario: string = "";
   nickname: string = "";
+  password: string = "";
   tipoPedagogia: string = "";
-  email: string = "";  
+  email: string = "";
+  
+  /* isDBReady: boolean = false; */ 
    
   limpiarCeldas(){
     this.nombreUsuario='';
     this.apellidoUsuario='';
     this.nickname='';
+    this.password='';
     this.tipoPedagogia='';
     this.email='';
     
   }
 
-  constructor(private alertController: AlertController) {}
+  public photo: SafeResourceUrl | undefined;
+
+  constructor(private alertController: AlertController, private sanitizer: DomSanitizer) {}
+
+  async takePicture(){
+    try {
+      const capturedPhoto = await Camera.getPhoto({
+        quality: 90,
+        allowEditing: true,
+        resultType: CameraResultType.Uri
+      });
+
+      this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(capturedPhoto.webPath!);
+    } catch(error){
+      console.error('Error al tomar la foto: ', error);
+    }
+  }
   
-  async showPopup() {
+  /* agregar a constructor  private dbService: ServicioDBService  para agregar la base de datos*/
+  /*async presentAlert(message: string){
     const alert = await this.alertController.create({
-      header: 'Datos ingresados',
-      message: `
-        Apellido: ${this.apellidoUsuario}
-        Nombre: ${this.nombreUsuario}
-        Usuario: ${this.nickname}
-        Carrera: ${this.tipoPedagogia}
-        E-mail: ${this.email}
-      `,
+      header: 'Mensaje',
+      message: message,
       buttons: ['OK']
     });
 
     await alert.present();
+  }  
+
+
+  guardarDatos() {
+    this.dbService.insertarUsuario(this.nombreUsuario, this.apellidoUsuario, this.nickname, this.password, this.tipoPedagogia, this.email)
+    .then (() => {
+      this.presentAlert('Datos guardados exitosamente');
+    })
+    .catch(error => {
+      this.presentAlert('Error al guardar datos: ' + error);
+    });
   }
+
+  */
+
+  
+
   ngOnInit() {
+    /*this.dbService.getIsDBReady().subscribe(isReady => {
+      this.isDBReady = isReady;
+      if (isReady) {
+
+      }
+    });*/
   }
+
 
 }
 

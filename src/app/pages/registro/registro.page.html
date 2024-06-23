@@ -14,6 +14,13 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-button expand="block" (click)="takePicture()">Tomar Foto</ion-button>
+  <ion-card *ngIf="photo">
+    <ion-card-content>
+      <img [src]="photo" *ngIf="photo" width="50%">
+    </ion-card-content>
+  </ion-card>
+
   <div class="datos-registro">
   <ion-list>
     <ion-item>
@@ -26,6 +33,9 @@
       <ion-input label="Usuario" placeholder="Ingrese nombre de usuario" [(ngModel)]="nickname"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-input label="Contraseña" placeholder="Ingrese su contraseña" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-select label="Pedagogía" placeholder="Seleccione Tipo" [(ngModel)]="tipoPedagogia">
         <ion-select-option value="p-ingles">Pedagogía en Inglés</ion-select-option>
         <ion-select-option value="p-mate">Pedagogía en Matemáticas</ion-select-option>
@@ -36,7 +46,7 @@
     <ion-item>
       <ion-input label="E-mail" labelPlacement="floating" placeholder="ejemplo@gmail.com" [(ngModel)]="email"></ion-input>
     </ion-item>
-    <ion-button (click)="limpiarCeldas()">Limpiar</ion-button> <ion-button (click)="showPopup()">Mostrar</ion-button> 
+    <ion-button (click)="limpiarCeldas()">Limpiar</ion-button> <!-- <ion-button (click)="guardarDatos()">Guardar</ion-button> -->
   </ion-list>
   </div>
 </ion-content>

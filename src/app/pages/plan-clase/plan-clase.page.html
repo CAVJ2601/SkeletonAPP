@@ -13,11 +13,48 @@
       <ion-title size="large">Planificación de Clase</ion-title>
     </ion-toolbar>
   </ion-header>
-    <div class="texto">
-    <h1><strong>¡Página en construcción!</strong></h1><br>
-    <ion-text>Pronto un planificador de clase a clase</ion-text>
+
+  <div class="titulo-clase">
+    <strong>Completa los siguentes espacios para planificar tu Clase a Clase</strong>
+  </div>
+  
+
+  <div class="plani-clase">  
+    <ion-list>
+      <ion-item>
+        <ion-input label="Unidad" placeholder="Ingrese nombre de la Unidad" [(ngModel)]="nombreUnidad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea label="Obj. de Clase" labelPlacement="floating" placeholder="Escriba el objetivo de la clase" [(ngModel)]="objClase"></ion-textarea>
+      </ion-item>
+      <mat-form-field class="example-chip-list">
+        <mat-label>Objetivos de Aprendizaje</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter fruits">
+          @for (oA of objAp; track oA) {
+            <mat-chip-row
+              (removed)="remove(oA)"
+              [editable]="true"
+              (edited)="edit(oA, $event)"
+              [aria-description]="'press enter to edit ' + oA.name">
+              {{oA.name}}
+              <button matChipRemove [attr.aria-label]="'remove ' + oA.name">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+          }
+          <input placeholder="Agrege el OA..."
+                 [matChipInputFor]="chipGrid"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="add($event)"/>
+        </mat-chip-grid>
+      </mat-form-field>
+      <ion-item>
+        <ion-textarea label="Desarrollo" labelPlacement="floating" placeholder="Escriba directrices generales de la clase" [(ngModel)]="Desarrollo"></ion-textarea>
+      </ion-item>
+      <ion-button (click)="limpiarCeldas()">Limpiar</ion-button><ion-button (click)="enviarDatos()">Guardar Datos</ion-button>
+    </ion-list>
     </div>
-  <mat-spinner></mat-spinner>
 </ion-content>
 
 <app-footer></app-footer>
